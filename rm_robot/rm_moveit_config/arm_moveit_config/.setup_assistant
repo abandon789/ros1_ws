@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: rm_description
+    relative_path: urdf/GEN72/Gen72_hand_camera.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/GEN72.srdf
+  CONFIG:
+    author_name: lzh
+    author_email: 2655433671@qq.com
+    generated_timestamp: 1744970979

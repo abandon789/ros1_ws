@@ -1,0 +1,14 @@
+<launch>
+  <include file="$(find rm_bringup)/launch/gen72_robot.launch">
+  </include>
+  <!-- 如果不行显示moveit把上面那个注释掉换下面这个 -->
+  <!-- <include file="$(find rm_bringup)/launch/rm_gen72_robot.launch">
+  </include> -->
+  <include file="$(find orbbec_camera)/launch/gemini_330_series.launch" >
+  </include>
+   <node pkg="vi_grab" name="yolo_view" type="yolo_view.py" cwd="node" output="screen"  />
+   <node pkg="vi_grab" name="msg_pub" type="pub.py" cwd="node" output="screen" />
+   <!-- 可以不注释这个来启动规划的代码 -->
+   <!-- 但是建议先别取消注释，因为机械臂启动需要时间，如果一起使用会导致有些消息发送不出去如上点或者切换工具坐标系，等机械臂稳定了在单独启动这个命令 -->
+   <!-- <node pkg="vi_grab" name="move_plan" type="move_plan.py" cwd="node" output="screen"  /> -->
+</launch>
